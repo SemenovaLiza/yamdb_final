@@ -8,7 +8,7 @@ services:
     env_file:
       - ./.env
   web:
-    image: semenovaliza/api_yamdb:latest
+    image: semenovaliza/api_yamdb
     restart: always
     volumes:
       - static_value:/app/static/
