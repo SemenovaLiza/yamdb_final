@@ -1,5 +1,5 @@
 # Api Yamdb
-https://github.com/SemenovaLiza/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg
+![workflow badge for yamdb project](https://github.com/SemenovaLiza/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 ### *Description*
 The project allows you to create multimedia content and leave reviews for it, as well as comment on the reviews.
 
