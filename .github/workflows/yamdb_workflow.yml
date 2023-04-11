@@ -55,9 +55,3 @@ jobs:
         username: ${{ secrets.USER }}
         key: ${{ secrets.SSH_KEY }}
         passphrase: ${{ secrets.PASSPHRASE }} # Если ваш ssh-ключ защищён фразой-паролем
-        script: |
-          # Выполняет pull образа с DockerHub
-          sudo docker pull semenovaliza/api_yamdb:v1.03.2022
-          #остановка всех контейнеров
-          sudo docker stop $(sudo docker ps -a -q)
-          sudo docker run --rm -d -p 5000:5000 semenovaliza/api_yamdb:v1.03.2022
