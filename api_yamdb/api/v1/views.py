@@ -1,27 +1,25 @@
 from django.contrib.auth.tokens import default_token_generator
+from django.core.mail import send_mail
 from django.db.models import Avg
 from django.db.models.functions import Round
 from django.shortcuts import get_object_or_404
-from django.core.mail import send_mail
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework import filters, mixins, permissions, status, viewsets
+from rest_framework.decorators import action, api_view, permission_classes
+from rest_framework.pagination import PageNumberPagination
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import AccessToken
-from rest_framework.decorators import action, api_view, permission_classes
-from rest_framework import (
-    filters, viewsets, status, permissions, mixins)
-from rest_framework.pagination import PageNumberPagination
-from django_filters.rest_framework import DjangoFilterBackend
+from reviews.models import Category, CustomUser, Genre, Review, Title
 
-from reviews.models import (Category, Genre, Title,
-                            CustomUser, Review)
 from api_yamdb import settings
+
 from .filters import TitleFilter
-from .permissions import (IsAdminOrReadOnly, IsAdmin,
-                          AuthorOrStaffOrReadOnly)
-from .serializers import (CategorySerializer, GenreSerializer,
+from .permissions import AuthorOrStaffOrReadOnly, IsAdmin, IsAdminOrReadOnly
+from .serializers import (CategorySerializer, CommentSerializer,
+                          CustomUserSerializer, EditUserProfileSerializer,
+                          GenreSerializer, ReviewSerializer, SignUpSerializer,
                           TitleSerializerGet, TitleSerializerPost,
-                          EditUserProfileSerializer, CustomUserSerializer,
-                          SignUpSerializer, TokenSerializer,
-                          ReviewSerializer, CommentSerializer)
+                          TokenSerializer)
 
 
 @api_view(['post'])

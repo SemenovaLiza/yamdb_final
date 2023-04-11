@@ -1,6 +1,5 @@
 """A module for filtering functions."""
 import django_filters
-
 from reviews.models import Title
 
 

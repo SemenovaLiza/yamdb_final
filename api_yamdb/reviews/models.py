@@ -1,12 +1,12 @@
+from api.v1.validators import username_validation
+from django.contrib.auth.models import AbstractUser
+from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
 from django.db.models.constraints import UniqueConstraint
-from django.core.validators import MinValueValidator, MaxValueValidator
-from django.contrib.auth.models import AbstractUser
 
-from api_yamdb.settings import (ADMIN, MODERATOR, USER,
-                                USERNAME_MAX_LENGTH, EMAIL_MAX_LENGTH,
-                                FIRST_NAME_MAX_LENGTH, LAST_NAME_MAX_LENGTH)
-from api.v1.validators import username_validation
+from api_yamdb.settings import (ADMIN, EMAIL_MAX_LENGTH, FIRST_NAME_MAX_LENGTH,
+                                LAST_NAME_MAX_LENGTH, MODERATOR, USER,
+                                USERNAME_MAX_LENGTH)
 
 
 class Title(models.Model):

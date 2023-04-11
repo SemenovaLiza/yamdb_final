@@ -5,7 +5,6 @@ from rest_framework.routers import SimpleRouter
 
 from .v1 import views
 
-
 v1_router = SimpleRouter()
 v1_router.register('titles', views.TitleViewSet, basename='titles')
 v1_router.register('categories', views.CategoryViewSet, basename='categories')

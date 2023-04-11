@@ -1,10 +1,11 @@
 """Import CSV."""
 
 import csv
+
 from django.conf import settings
 from django.core.management import BaseCommand
-from reviews.models import (Category, Genre, Title, CustomUser,
-                            Review, Comment, GenreTitle)
+from reviews.models import (Category, Comment, CustomUser, Genre, GenreTitle,
+                            Review, Title)
 
 SOURCES = {
     CustomUser: 'users.csv',
