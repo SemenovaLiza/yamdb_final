@@ -15,14 +15,14 @@ Using terminal change the current working directory to the location where you wa
 
 Clone the repository to your local machine:
 ```
-git clone git@github.com:SemenovaLiza/api_yamdb.git
+git@github.com:SemenovaLiza/yamdb_final.git
 ```
 Go to the remote server and install docker:
 ```
 ssh login@remote.server.pub.ip
 sudo apt install docker.io
 ```
-Install Docker Desktop and run it, install install the compose plugin on your remote server:
+Install Docker Desktop and run it, install the compose plugin on your remote server:
 ```
 DOCKER_CONFIG=${DOCKER_CONFIG:-$HOME/.docker}
 mkdir -p $DOCKER_CONFIG/cli-plugins
@@ -32,7 +32,7 @@ Apply executable permissions to the binary:
 ```
 chmod +x $DOCKER_CONFIG/cli-plugins/docker-compose
 ```
-or, if you chose to install Compose for all users:
+or, if you chose to install compose for all users:
 ```
 sudo chmod +x /usr/local/lib/docker/cli-plugins/docker-compose
 ```
@@ -40,12 +40,12 @@ Verify that docker-compose was installed correctly:
 ```
 docker compose version
 ```
-Copy *docker-compose.yaml* and *nginx/nginx.conf* from the infra directory to the remote server:
+Copy *docker-compose.yaml* and *nginx/nginx.conf* from the *infra* directory to the remote server:
 ```
 scp docker-compose.yml <login>@<host>:/home/<login>/docker-compose.yml
 scp nginx.conf <login>@<host>:/home/login>/nginx.conf
 ```
-Make a file using this pattern:
+Make an .env file using this pattern:
 ```
 DB_ENGINE=django.db.backends.postgresql
 DB_NAME=postgres
