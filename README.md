@@ -10,6 +10,20 @@ This project is an extended version of the [Api Yamdb](https://github.com/Semeno
 - PostgreSQL
 - Docker 20.10.23
 ###### *The rest of the technologies can be found in the requirements.txt file*
+For the project to work, you will need to create these secret variables in GitHub:
+secrets.DOCKER_USERNAME - *Docker Hub login*
+secrets.DOCKER_PASSWORD - *Docker Hub password*
+secrets.HOST - *Remote server public IP*
+secrets.USER - *Remote server login*
+secrets.SSH_KEY - *Private key from the local machine*
+secrets.PASSPHRASE - *The passphrase used when creating the ssh key*
+Secrets variables for remote server:
+secrets.DB_ENGINE - *The database using in project*
+secrets.DB_NAME - *The database's name*
+secrets.POSTGRES_USER - *The username of database user*
+secrets.POSTGRES_PASSWORD - *The password for the user*
+secrets.DB_HOST - *Remote server public IP*
+secrets.DB_PORT - *The port for connecting to the database*
 ### *How to launch a project*
 Using terminal change the current working directory to the location where you want the cloned directory.
 
@@ -44,15 +58,6 @@ Copy *docker-compose.yaml* and *nginx/nginx.conf* from the *infra* directory to 
 ```
 scp docker-compose.yml <login>@<host>:/home/<login>/docker-compose.yml
 scp nginx.conf <login>@<host>:/home/login>/nginx.conf
-```
-Make an .env file using this pattern:
-```
-DB_ENGINE=django.db.backends.postgresql
-DB_NAME=postgres
-POSTGRES_USER=postgres
-POSTGRES_PASSWORD=password
-DB_HOST=db
-DB_PORT=5432
 ```
 ### *Author*
 Semenova Elizaveta
