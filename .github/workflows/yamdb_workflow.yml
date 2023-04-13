@@ -48,7 +48,7 @@ jobs:
      - name: Push to Docker Hub
        uses: docker/build-push-action@v4
        with:
-         context: ./api_yamdb/Dockerfile
+         context: api_yamdb
          push: true
          tags: semenovaliza/api_yamdb:v1.03.2022
 
