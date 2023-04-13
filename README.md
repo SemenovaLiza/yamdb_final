@@ -25,7 +25,9 @@ This project is an extended version of the [Api Yamdb](https://github.com/Semeno
 - secrets.POSTGRES_PASSWORD - *The password for the user*
 - secrets.DB_HOST - *Remote server public IP*
 - secrets.DB_PORT - *The port for connecting to the database*
-
+### Telegram variables:
+- secrets.TELEGRAM_TO - *Telegram accont id*
+- secrets.TELEGRAM_TOKEN - *Telegram bot token*
 ### *How to launch a project*
 Using terminal change the current working directory to the location where you want the cloned directory.
 
