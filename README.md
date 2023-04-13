@@ -63,5 +63,18 @@ Copy *docker-compose.yaml* and *nginx/nginx.conf* from the *infra* directory to 
 scp docker-compose.yml <login>@<host>:/home/<login>/docker-compose.yml
 scp nginx.conf <login>@<host>:/home/login>/nginx.conf
 ```
+After executing these commands, make a git push and perform migrations on the remote server and collect static:
+```
+docker-compose exec web python manage.py migrate
+docker-compose exec web python manage.py collectstatic --no-input
+```
+Now enter the public IP of your remote server in the address bar:
+```
+http://remote.server.public.ip/api/v1/
+```
+The project is available at:
+```
+http://51.250.97.108/api/v1/
+```
 ### *Author*
 Semenova Elizaveta
