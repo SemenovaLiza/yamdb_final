@@ -74,7 +74,7 @@ http://remote.server.public.ip/api/v1/
 ```
 The project is available at:
 ```
-http://51.250.97.108/api/v1/
+http://lizasprojects.ddns.net/api/v1/
 ```
 ### *Author*
 Semenova Elizaveta
