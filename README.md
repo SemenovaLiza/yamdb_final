@@ -11,7 +11,9 @@ This project is an extended version of the [Api Yamdb](https://github.com/Semeno
 - Docker 20.10.23
 ###### *The rest of the technologies can be found in the requirements.txt file*
 For the project to work, you will need to create these secret variables in GitHub:
+
 secrets.DOCKER_USERNAME - *Docker Hub login*
+
 secrets.DOCKER_PASSWORD - *Docker Hub password*
 secrets.HOST - *Remote server public IP*
 secrets.USER - *Remote server login*
