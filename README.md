@@ -1,173 +1,58 @@
 # Api Yamdb
 ![workflow badge for yamdb project](https://github.com/SemenovaLiza/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 ### *Description*
-The project allows you to create multimedia content and leave reviews for it, as well as comment on the reviews.
-
+This project is an extended version of the [Api Yamdb](https://github.com/SemenovaLiza/api_yamdb), which allows you to manage the project on a remote server.
 ### *Technologies*
 - Python 3.7
 - Django 3.2.16
 - django rest framework 3.12.4
 - django rest framework-simplejwt 4.7.2
+- PostgreSQL
+- Docker 20.10.23
 ###### *The rest of the technologies can be found in the requirements.txt file*
-
-### *Project features*
-- Registration and authorization of users by Simple JWT token.
-- Getting, creating, updating user's accounts.
-- Getting, creating, updating, deleting content, genres, categories.
-- Getting, creating, updating, deleting comments and reviews.
-
-[Project documentation](http://127.0.0.1:8000/redoc/)
-###### *Documentation will open after the project is deployed.*
 ### *How to launch a project*
 Using terminal change the current working directory to the location where you want the cloned directory.
 
-Clone the repository and go to it:
+Clone the repository to your local machine:
 ```
 git clone git@github.com:SemenovaLiza/api_yamdb.git
 ```
+Go to the remote server and install docker:
 ```
-cd api_yamdb
+ssh login@remote.server.pub.ip
+sudo apt install docker.io
 ```
-Install and activate the virtual environment:
+Install Docker Desktop and run it, install install the compose plugin on your remote server:
 ```
-python3 -m venv venv
+DOCKER_CONFIG=${DOCKER_CONFIG:-$HOME/.docker}
+mkdir -p $DOCKER_CONFIG/cli-plugins
+curl -SL https://github.com/docker/compose/releases/download/v2.17.2/docker-compose-linux-x86_64 -o $DOCKER_CONFIG/cli-plugins/docker-compose
 ```
+Apply executable permissions to the binary:
 ```
-source venv/bin/activate
+chmod +x $DOCKER_CONFIG/cli-plugins/docker-compose
 ```
-Install dependencies from the file requirements.txt:
+or, if you chose to install Compose for all users:
 ```
-python -m pip install --upgrade pip
+sudo chmod +x /usr/local/lib/docker/cli-plugins/docker-compose
 ```
+Verify that docker-compose was installed correctly:
 ```
-pip install -r requirements.txt
+docker compose version
 ```
-Go to the yatube_api app:
+Copy *docker-compose.yaml* and *nginx/nginx.conf* from the infra directory to the remote server:
 ```
-cd api_yamdb
+scp docker-compose.yml <login>@<host>:/home/<login>/docker-compose.yml
+scp nginx.conf <login>@<host>:/home/login>/nginx.conf
 ```
-Perform migrations:
+Make a file using this pattern:
 ```
-python3 manage.py migrate
-```
-Launсh the project:
-```
-python3 manage.py runserver
-```
-A token is required to use some methods in the in Api Yamdb project. To get it, you need to sign up using your email and username.
-#### POST /api/v1/auth/signup/
-```
-{
-    "username": "string",
-    "email": "string"
-} 
-```
-Next, you will receive a confirmation code to your email.
-#### POST /api/v1/auth/token/
-```
-{
-    "username": "string",
-    "confirmation_code": "string"
-} 
-```
-Then you will receive a access token that will be passed in the header of each request, in the "Authorization" field. 
-
-Example:
-```
-Bearer #########
-```
-You can also change your account details.
-#### PATCH /api/v1/users/me/
-```
-{
-    "bio": "string"
-}
-```
-### Title requests
-#### POST request api/v1/titles/
-```
-{
-  "name": "string",
-  "year": 0,
-  "description": "string",
-  "genre": [
-    "string"
-  ],
-  "category": "string"
-}
-```
-#### GET request api/v1/titles/{titles_id}/
-```
-{
-  "id": 0,
-  "name": "string",
-  "year": 0,
-  "rating": 0,
-  "description": "string",
-  "genre": [
-    {
-      "name": "string",
-      "slug": "string"
-    }
-  ],
-  "category": {
-    "name": "string",
-    "slug": "string"
-  }
-}
-```
-### Genres request
-#### GET request api/v1/genres/
-```
-{
-  "count": 0,
-  "next": "string",
-  "previous": "string",
-  "results": [
-    {
-      "name": "string",
-      "slug": "string"
-    }
-  ]
-}
-```
-### Reviews requests
-#### POST api/v1/titles/{title_id}/reviews/{review_id}/comments/
-```
-{
-  "text": "string"
-}
-```
-#### GET api/v1/titles/{title_id}/reviews/{review_id}/comments/{comment_id}/
-```
-{
-  "id": 0,
-  "text": "string",
-  "author": "string",
-  "pub_date": "2019-08-24T14:15:22Z"
-}
-```
-### Review's comments requests
-#### POST api/v1/titles/{title_id}/reviews/{review_id}/comments/
-```
-{
-  "text": "string"
-}
-```
-#### GET api/v1/titles/{title_id}/reviews/{review_id}/comments/{comment_id}/
-```
-{
-  "id": 0,
-  "text": "string",
-  "author": "string",
-  "pub_date": "2019-08-24T14:15:22Z"
-}
-```
-#### PATCH api/v1/titles/{title_id}/reviews/{review_id}/comments/{comment_id}/
-```
-{
-  "text": "string"
-}
+DB_ENGINE=django.db.backends.postgresql
+DB_NAME=postgres
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=password
+DB_HOST=db
+DB_PORT=5432
 ```
 ### *Author*
 Semenova Elizaveta
