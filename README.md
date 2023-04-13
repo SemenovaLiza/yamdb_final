@@ -10,7 +10,7 @@ This project is an extended version of the [Api Yamdb](https://github.com/Semeno
 - PostgreSQL
 - Docker 20.10.23
 ###### *The rest of the technologies can be found in the requirements.txt file*
-You will need to create these secret variables in GitHub to work with this project:
+### You will need to create these secret variables in GitHub to work with this project:
 
 - secrets.DOCKER_USERNAME - *Docker Hub login*
 - secrets.DOCKER_PASSWORD - *Docker Hub password*
@@ -18,7 +18,7 @@ You will need to create these secret variables in GitHub to work with this proje
 - secrets.USER - *Remote server login*
 - secrets.SSH_KEY - *Private key from the local machine*
 - secrets.PASSPHRASE - *The passphrase used when creating the ssh key*
-- secrets variables for remote server:
+### Secrets variables for remote server:
 - secrets.DB_ENGINE - *The database using in project*
 - secrets.DB_NAME - *The database's name*
 - secrets.POSTGRES_USER - *The username of database user*
