@@ -169,10 +169,5 @@ You can also change your account details.
   "text": "string"
 }
 ```
-### *Project developers:*
-
-User authorization - teamlead Semenova Elizaveta([Github](https://github.com/SemenovaLiza))
-
-Multimedia, genres and categories - Zakharov Vladimir([Github](https://github.com/zakharovvladimir))
-
-Comments and reviews - Vladimir Dolgih([Github](https://github.com/Waffe1n))
+### *Author*
+Semenova Elizaveta
