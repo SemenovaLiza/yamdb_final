@@ -1,7 +1,7 @@
 # Api Yamdb
 ![workflow badge for yamdb project](https://github.com/SemenovaLiza/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 ### *Description*
-This project is an extended version of the [Api Yamdb](https://github.com/SemenovaLiza/api_yamdb), which allows you to manage the project on a remote server.
+This project is an extended version of the [api_yamdb](https://github.com/SemenovaLiza/api_yamdb) project, which allows you to manage the project on a remote server.
 ### *Technologies*
 - Python 3.7
 - Django 3.2.16
