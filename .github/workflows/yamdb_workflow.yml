@@ -46,9 +46,7 @@ jobs:
        with:
          push: true
          tags: semenovaliza/api_yamdb:v1.03.2022
-         secrets: |
-            GIT_AUTH_TOKEN=${{ secrets.MYTOKEN }}
- 
+         file: ./api_yamdb/Dockerfile 
   deploy:
     runs-on: ubuntu-latest
     needs: build_and_push_to_docker_hub
