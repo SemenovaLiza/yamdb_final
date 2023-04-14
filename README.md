@@ -68,10 +68,6 @@ After executing these commands, make a git push and perform migrations on the re
 docker-compose exec web python manage.py migrate
 docker-compose exec web python manage.py collectstatic --no-input
 ```
-### *Example of connecting to a project*
-```
-http://remote.server.public.ip/api/v1/titles/
-```
 This project is available at:
 http://lizasprojects.ddns.net/api/v1/titles/
 
