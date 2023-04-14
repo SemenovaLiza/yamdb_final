@@ -70,7 +70,7 @@ docker-compose exec web python manage.py collectstatic --no-input
 ```
 ### *Example of connecting to a project*
 ```
-http://remote.server.public.ip/api/v1/
+http://remote.server.public.ip/api/v1/titles/
 ```
 This project is available at:
 http://lizasprojects.ddns.net/api/v1/titles/
