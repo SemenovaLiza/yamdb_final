@@ -1,5 +1,12 @@
 # Api Yamdb extended version
 ![workflow badge for yamdb project](https://github.com/SemenovaLiza/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
+![Python](https://img.shields.io/badge/Python-3.7-blue?logo=python&logoColor=white)
+![Django](https://img.shields.io/badge/Django-3.2.16-green?logo=django&logoColor=white)
+![DRF](https://img.shields.io/badge/DRF-3.12.4-red?logo=django&logoColor=white)
+![SimpleJWT](https://img.shields.io/badge/SimpleJWT-4.7.2-orange?logo=jsonwebtokens&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-blue?logo=postgresql&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-20.10.23-blue?logo=docker&logoColor=white)
+![Pytest](https://img.shields.io/badge/tests-passing-brightgreen?style=flat-square&logo=pytest)![License](https://img.shields.io/badge/license-MIT-purple.svg?style=flat-square) ![Status](https://img.shields.io/badge/status-finished-green?style=flat-square)
 ### *Description*
 This project is an extended version of the [Api Yamdb](https://github.com/SemenovaLiza/api_yamdb) project, which allows you to manage the project on a remote server.
 ### *Technologies*
@@ -69,7 +76,8 @@ docker-compose exec web python manage.py migrate
 docker-compose exec web python manage.py collectstatic --no-input
 ```
 This project is available at:
+###### *Project is currently not running!*
 http://lizasprojects.ddns.net/api/v1/titles/
 
 ### *Author*
-Semenova Elizaveta
+Elizaveta Semenova
